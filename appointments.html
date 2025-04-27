@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments</title>
+</head>
+
+<body
+    style="margin:0; padding:0; background-color:#f4f7fc; font-family:Arial, sans-serif; display:flex; flex-direction:column; align-items:center; min-height:100vh;">
+
+    <div style="width:100%; max-width:1200px; padding:40px 20px; text-align:center;">
+        <h1 style="font-size:36px; color:#1a237e; margin-bottom:30px;">Appointments</h1>
+
+        <a href="{{ url_for('add_appointment') }}"
+            style="background-color:#4CAF50; color:white; padding:10px 20px; text-decoration:none; border-radius:8px; font-size:16px; display:inline-block; margin-bottom:20px;">
+            Add Appointment
+        </a>
+
+        <div
+            style="background-color:#ffffff; padding:20px; border-radius:15px; box-shadow:0 6px 12px rgba(0,0,0,0.1); overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+                <thead>
+                    <tr style="background-color:#1a237e; color:white;">
+                        <th style="padding:12px; border:1px solid #ddd;">Appointment ID</th>
+                        <th style="padding:12px; border:1px solid #ddd;">User</th>
+                        <th style="padding:12px; border:1px solid #ddd;">Doctor</th>
+                        <th style="padding:12px; border:1px solid #ddd;">Date</th>
+                        <th style="padding:12px; border:1px solid #ddd;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for appointment in appointments %}
+                    <tr>
+                        <td style="padding:12px; border:1px solid #ddd;">{{ appointment.appointment_id }}</td>
+                        <td style="padding:12px; border:1px solid #ddd;">{{ appointment.user_name }}</td>
+                        <td style="padding:12px; border:1px solid #ddd;">{{ appointment.doctor_name }}</td>
+                        <td style="padding:12px; border:1px solid #ddd;">{{ appointment.appointment_date }}</td>
+                        <td style="padding:12px; border:1px solid #ddd;">
+                            <a href="{{ url_for('edit_appointment', id=appointment.appointment_id) }}"
+                                style="background-color:#4CAF50; color:white; padding:8px 16px; text-decoration:none; border-radius:8px; font-size:14px; margin-right:5px;">
+                                Edit
+                            </a>
+                            <a href="{{ url_for('delete_appointment', id=appointment.appointment_id) }}"
+                                style="background-color:red; color:white; padding:8px 16px; text-decoration:none; border-radius:8px; font-size:14px;">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Prescription</title>
+</head>
+
+<body
+    style="margin:0; padding:0; background-color:#f4f7fc; font-family:Arial, sans-serif; display:flex; flex-direction:column; align-items:center; min-height:100vh;">
+    <div
+        style="width:100%; max-width:600px; padding:40px; background:#fff; border-radius:15px; box-shadow:0 6px 12px rgba(0,0,0,0.1); margin-top:50px;">
+        <h1 style="font-size:32px; color:#1a237e; margin-bottom:20px;">Edit Prescription</h1>
+
+        <form method="POST" style="display:flex; flex-direction:column; gap:15px;">
+            <select name="user_id" required style="padding:12px; border:1px solid #ccc; border-radius:8px;">
+                {% for user in users %}
+                <option value="{{ user.user_id }}" {% if user.user_id==prescription.user_id %}selected{% endif %}>
+                    {{ user.name }}
+                </option>
+                {% endfor %}
+            </select>
+
+            <select name="doctor_id" required style="padding:12px; border:1px solid #ccc; border-radius:8px;">
+                {% for doctor in doctors %}
+                <option value="{{ doctor.doctor_id }}" {% if doctor.doctor_id==prescription.doctor_id %}selected{% endif
+                    %}>
+                    {{ doctor.name }}
+                </option>
+                {% endfor %}
+            </select>
+
+            <select name="pharmacy_id" required style="padding:12px; border:1px solid #ccc; border-radius:8px;">
+                {% for pharmacy in pharmacies %}
+                <option value="{{ pharmacy.pharmacy_id }}" {% if pharmacy.pharmacy_id==prescription.pharmacy_id
+                    %}selected{% endif %}>
+                    {{ pharmacy.name }}
+                </option>
+                {% endfor %}
+            </select>
+
+            <input type="date" name="prescription_date" value="{{ prescription.prescription_date }}" required
+                style="padding:12px; border:1px solid #ccc; border-radius:8px;">
+            <button type="submit"
+                style="background:#4CAF50; color:white; padding:12px; border:none; border-radius:8px;">Update
+                Prescription</button>
+        </form>
+    </div>
+</body>
+
+</html>

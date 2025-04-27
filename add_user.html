@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+</head>
+
+<body
+    style="margin:0; padding:0; background-color:#f4f7fc; font-family:Arial, sans-serif; display:flex; flex-direction:column; align-items:center; min-height:100vh;">
+
+    <div
+        style="width:100%; max-width:600px; padding:40px 20px; background-color:#ffffff; border-radius:15px; box-shadow:0 6px 12px rgba(0,0,0,0.1); margin-top:50px; text-align:center;">
+        <h1 style="font-size:32px; color:#1a237e; margin-bottom:30px;">Add New User</h1>
+
+        <form method="POST" class="add-user-form" style="display:flex; flex-direction:column; gap:15px;">
+            <input type="text" name="name" placeholder="Name" required
+                style="padding:12px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+            <input type="email" name="email" placeholder="Email" required
+                style="padding:12px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+            <input type="submit" value="Add User"
+                style="background-color:#4CAF50; color:white; padding:12px; border:none; border-radius:8px; font-size:16px; cursor:pointer; transition:background-color 0.3s;">
+        </form>
+    </div>
+
+    <script>
+        const form = document.querySelector('.add-user-form');
+        form.style.opacity = 0;
+        form.style.transition = "opacity 1s";
+
+        window.onload = () => {
+            form.style.opacity = 1;
+        };
+    </script>
+
+</body>
+
+</html>

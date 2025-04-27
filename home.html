@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Healthcare System - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Welcome to the Healthcare Management System</h1>
+        </header>
+
+        <div class="card-grid">
+            <a href="/users" class="card">
+                <h2>View Users</h2>
+                <p>See all registered users.</p>
+            </a>
+
+            <a href="/doctors" class="card">
+                <h2>View Doctors</h2>
+                <p>See all doctors and their specializations.</p>
+            </a>
+
+            <a href="/pharmacies" class="card">
+                <h2>View Pharmacies</h2>
+                <p>See pharmacy details.</p>
+            </a>
+
+            <a href="/appointments" class="card">
+                <h2>View Appointments</h2>
+                <p>See scheduled appointments.</p>
+            </a>
+
+            <a href="/prescriptions" class="card">
+                <h2>View Prescriptions</h2>
+                <p>See issued prescriptions.</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

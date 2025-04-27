@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+
+<body
+    style="margin:0; padding:0; background-color:#f4f7fc; font-family:Arial, sans-serif; display:flex; flex-direction:column; align-items:center; min-height:100vh;">
+    <div
+        style="width:100%; max-width:600px; padding:40px 20px; background-color:#ffffff; border-radius:15px; box-shadow:0 6px 12px rgba(0,0,0,0.1); margin-top:50px; text-align:center;">
+        <h1 style="font-size:32px; color:#1a237e; margin-bottom:30px;">Edit User</h1>
+
+        <form method="POST" style="display:flex; flex-direction:column; gap:15px;">
+            <input type="text" name="name" value="{{ user.name }}" required
+                style="padding:12px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+            <input type="email" name="email" value="{{ user.email }}" required
+                style="padding:12px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+            <input type="submit" value="Update User"
+                style="background-color:#4CAF50; color:white; padding:12px; border:none; border-radius:8px; font-size:16px; cursor:pointer;">
+        </form>
+    </div>
+</body>
+
+</html>
